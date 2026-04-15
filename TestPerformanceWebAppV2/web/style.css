@@ -3,15 +3,6 @@
     Author     : S DYWILI 230654182
 */
 
-/* ============================================
-   MODERN STUDENT MANAGEMENT SYSTEM STYLESHEET
-   ============================================
-   Author: Custom Design
-   Purpose: Unique, interactive, professional UI
-   Features: Glassmorphism, micro-interactions,
-             smooth transitions, responsive layout
-   ============================================ */
-
 /* ---------- GLOBAL RESET & BASE ---------- */
 /* Resets default browser margins/paddings and sets consistent box-sizing */
 *,
@@ -404,17 +395,17 @@ input[value="GET TEST STATISTICS"] {
     body {
         padding: 3rem;
     }
-    
+
     h1 {
         font-size: 3.5rem;
     }
-    
+
     /* Make form columns on larger screens */
     form tr {
         flex-wrap: nowrap;
         align-items: center;
     }
-    
+
     form td:first-child {
         text-align: right;
     }
@@ -435,17 +426,17 @@ input[value="GET TEST STATISTICS"] {
         color: black;
         padding: 0;
     }
-    
+
     .card, form, table {
         background: white;
         border: 1px solid #ccc;
         box-shadow: none;
     }
-    
+
     a::after {
         display: none;
     }
-    
+
     input[type="submit"], button {
         display: none;
     }
@@ -621,12 +612,12 @@ form:has(input[type="submit"]:active) {
     .card-3d {
         height: 500px;
     }
-    
+
     .info-label {
         width: 80px;
         font-size: 0.8rem;
     }
-    
+
     .info-value {
         font-size: 0.9rem;
     }
