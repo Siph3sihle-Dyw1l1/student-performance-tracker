@@ -33,7 +33,6 @@ A full-stack Java EE web application for lecturers to track, analyze, and manage
 |---------|-------------|--------|
 | ✏️ **Update Student** | Edit existing student details (name, age, marks) | 🔄 In Progress |
 | 🗑️ **Delete Student** | Remove a student record from the database | 🔄 In Progress |
-| 📋 **Edit Marks** | Update test scores without changing other details | 📅 Planned |
 | 📎 **Bulk Import** | Upload multiple students via CSV/Excel | 📅 Planned |
 | 📄 **Export to PDF** | Generate printable reports of statistics | 📅 Planned |
 
