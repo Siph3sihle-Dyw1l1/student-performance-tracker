@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Student Performance System</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <style>
+            /* Only extra styles for landing page - doesn't affect other pages */
+            .hero {
+                min-height: 85vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .hero-content {
+                max-width: 700px;
+            }
+
+            .badge {
+                display: inline-block;
+                background: rgba(6, 182, 212, 0.15);
+                color: #06b6d4;
+                padding: 0.3rem 1rem;
+                border-radius: 50px;
+                font-size: 0.8rem;
+                font-weight: 500;
+                margin-bottom: 1.5rem;
+                border: 1px solid rgba(6, 182, 212, 0.3);
+            }
+
+            .btn-large {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.8rem;
+                background: linear-gradient(135deg, #06b6d4, #8b5cf6);
+                color: white;
+                padding: 1rem 2.5rem;
+                border-radius: 50px;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 1.1rem;
+                margin-top: 1rem;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
+            }
+
+            .btn-large:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 8px 25px rgba(6, 182, 212, 0.4);
+            }
+
+            .stats-row {
+                display: flex;
+                justify-content: center;
+                gap: 2rem;
+                margin-top: 3rem;
+                flex-wrap: wrap;
+            }
+
+            .stat-item {
+                background: rgba(255, 255, 255, 0.03);
+                padding: 1rem 1.5rem;
+                border-radius: 20px;
+                border: 1px solid rgba(6, 182, 212, 0.15);
+            }
+
+            .stat-number {
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: #06b6d4;
+            }
+
+            .stat-label {
+                font-size: 0.8rem;
+                color: #9ca3af;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="hero">
+            <div class="hero-content">
+                <span class="badge">⚡ realtime · cloud</span>
+                <h1>Student Performance<br>Management System</h1>
+                <p style="font-size: 1.1rem; margin: 1rem 0 0.5rem 0;">
+                    Track test scores, generate statistics, and manage student records.
+                </p>
+                <p style="color: #9ca3af; margin-bottom: 1.5rem;">
+                    Powered by Neon PostgreSQL
+                </p>
+
+                <a href="menu.jsp" class="btn-large">
+                    Launch Dashboard →
+                </a>
+
+            </div>
+        </div>
+    </body>
+</html>

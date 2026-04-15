@@ -1,0 +1,681 @@
+/* 
+    Created on : 14 Apr 2026, 10:46:32 PM
+    Author     : S DYWILI 230654182
+*/
+
+/* ============================================
+   MODERN STUDENT MANAGEMENT SYSTEM STYLESHEET
+   ============================================
+   Author: Custom Design
+   Purpose: Unique, interactive, professional UI
+   Features: Glassmorphism, micro-interactions,
+             smooth transitions, responsive layout
+   ============================================ */
+
+/* ---------- GLOBAL RESET & BASE ---------- */
+/* Resets default browser margins/paddings and sets consistent box-sizing */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Custom properties (CSS variables) for easy theme management */
+:root {
+    /* Color palette - modern dark theme with vibrant accents */
+    --bg-primary: #0a0e1a;
+    --bg-secondary: #111827;
+    --bg-card: rgba(18, 25, 45, 0.75);
+    --text-primary: #f0f3fa;
+    --text-secondary: #9ca3af;
+    --accent-cyan: #06b6d4;
+    --accent-purple: #8b5cf6;
+    --accent-pink: #ec4899;
+    --accent-green: #10b981;
+    --accent-yellow: #f59e0b;
+    --accent-red: #ef4444;
+    --border-glow: rgba(6, 182, 212, 0.3);
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* Dark gradient background with subtle animated movement */
+body {
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    background: linear-gradient(135deg, #0a0e1a 0%, #0f172a 50%, #1e1b4b 100%);
+    background-attachment: fixed;
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 2rem;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Animated background particles effect (subtle floating dots) */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at 1px 1px, rgba(6, 182, 212, 0.15) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+    animation: floatBackground 60s linear infinite;
+}
+
+@keyframes floatBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100px 100px;
+    }
+}
+
+/* Container to center content with max width */
+.container, main {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* ---------- TYPOGRAPHY & HEADINGS ---------- */
+h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple), var(--accent-pink));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+    animation: gradientShift 8s ease infinite;
+    text-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Animated underline effect on hover for all headings */
+h1::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+    border-radius: 4px;
+    margin-top: 0.5rem;
+    transition: width var(--transition-normal);
+}
+
+h1:hover::after {
+    width: 150px;
+}
+
+h2, h3 {
+    color: var(--accent-cyan);
+    margin: 1.5rem 0 1rem 0;
+}
+
+p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+/* ---------- CARD & CONTAINER STYLES ---------- */
+/* Glassmorphism card effect for all major content blocks */
+.card, form, table, .stats-container, .student-details {
+    background: var(--bg-card);
+    backdrop-filter: blur(12px);
+    border-radius: 24px;
+    border: 1px solid rgba(6, 182, 212, 0.2);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+}
+
+/* Hover lift effect for cards */
+.card:hover, form:hover, .stats-container:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-cyan);
+    box-shadow: var(--shadow-lg), 0 0 20px rgba(6, 182, 212, 0.2);
+}
+
+/* ---------- FORM STYLES (Modern & Interactive) ---------- */
+form {
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+}
+
+/* Grid layout for form fields */
+form table {
+    background: transparent;
+    backdrop-filter: none;
+    padding: 0;
+    box-shadow: none;
+    width: 100%;
+}
+
+form tr {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1.25rem;
+    gap: 0.5rem;
+}
+
+form td:first-child {
+    width: 140px;
+    font-weight: 600;
+    color: var(--accent-cyan);
+    padding: 0.75rem 0;
+}
+
+form td:last-child {
+    flex: 1;
+}
+
+/* Input fields with neon glow effect on focus */
+input, select {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    background: rgba(15, 23, 42, 0.9);
+    border: 1.5px solid rgba(6, 182, 212, 0.3);
+    border-radius: 16px;
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: all var(--transition-fast);
+    outline: none;
+}
+
+/* Different accent colors for different input types (just for fun) */
+input[type="text"]:focus {
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.2);
+}
+
+input[name="age"]:focus,
+input[name="minAge"]:focus,
+input[name="maxAge"]:focus {
+    border-color: var(--accent-yellow);
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
+}
+
+input[name="percentageMark"]:focus {
+    border-color: var(--accent-green);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
+select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2306b6d4'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.2rem;
+}
+
+/* Submit button with gradient and pulse animation */
+input[type="submit"], button {
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+    color: white;
+    border: none;
+    padding: 0.875rem 2rem;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    width: auto;
+    min-width: 200px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
+}
+
+input[type="submit"]:hover, button:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(6, 182, 212, 0.5);
+    filter: brightness(1.05);
+}
+
+input[type="submit"]:active, button:active {
+    transform: scale(0.98);
+}
+
+/* ---------- TABLE STYLES (Modern Data Display) ---------- */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow-x: auto;
+    display: block;
+}
+
+/* Responsive table wrapper */
+@media (min-width: 768px) {
+    table {
+        display: table;
+    }
+}
+
+th {
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(139, 92, 246, 0.2));
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: var(--accent-cyan);
+    border-bottom: 2px solid var(--accent-cyan);
+}
+
+td {
+    padding: 0.875rem 1rem;
+    border-bottom: 1px solid rgba(6, 182, 212, 0.15);
+    transition: background var(--transition-fast);
+}
+
+/* Row hover effect with glowing border */
+tr:hover td {
+    background: rgba(6, 182, 212, 0.08);
+}
+
+/* Special styling for marks - color coded */
+td:last-child {
+    font-weight: 600;
+}
+
+/* Dynamic mark colors based on pass/fail (using data attribute or JS would be better, but this is CSS-only demo) */
+/* For now, just a gradient effect */
+td:last-child {
+    background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.1));
+    border-radius: 0 12px 12px 0;
+}
+
+/* ---------- STATS TABLE SPECIAL STYLES ---------- */
+/* Target the statistics table (first table on get_statistics_outcome.jsp) */
+.stats-container table:first-of-type {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* Make stats rows pop with alternating neon borders */
+.stats-container tr td:first-child {
+    font-weight: 700;
+    color: var(--accent-yellow);
+}
+
+/* ---------- LINK STYLES (Navigation) ---------- */
+a {
+    color: var(--accent-cyan);
+    text-decoration: none;
+    position: relative;
+    transition: color var(--transition-fast);
+    font-weight: 500;
+}
+
+/* Animated underline effect for links */
+a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+    transition: width var(--transition-normal);
+}
+
+a:hover {
+    color: var(--accent-pink);
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+/* List styling for menu */
+ol {
+    list-style: none;
+    padding: 0;
+}
+
+ol li {
+    background: var(--bg-card);
+    backdrop-filter: blur(8px);
+    margin: 1rem 0;
+    padding: 1rem 1.5rem;
+    border-radius: 16px;
+    border-left: 4px solid var(--accent-cyan);
+    transition: all var(--transition-fast);
+}
+
+ol li:hover {
+    transform: translateX(10px);
+    border-left-color: var(--accent-pink);
+    background: rgba(18, 25, 45, 0.9);
+}
+
+ol li a {
+    font-weight: 600;
+}
+
+/* ---------- BUTTON-SPECIFIC STYLES ---------- */
+/* For the single button on get_test_statistics.jsp */
+form:has(input[value="GET TEST STATISTICS"]) {
+    text-align: center;
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(139, 92, 246, 0.1));
+}
+
+/* Pulsing animation for important buttons */
+input[value="GET TEST STATISTICS"] {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 25px rgba(6, 182, 212, 0.6);
+    }
+}
+
+/* ---------- RESPONSIVE DESIGN ---------- */
+/* Mobile first approach - everything above works on mobile,
+   but we add extra improvements for larger screens */
+@media (min-width: 768px) {
+    body {
+        padding: 3rem;
+    }
+    
+    h1 {
+        font-size: 3.5rem;
+    }
+    
+    /* Make form columns on larger screens */
+    form tr {
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+    
+    form td:first-child {
+        text-align: right;
+    }
+}
+
+@media (min-width: 1024px) {
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* ---------- PRINT STYLES (for reports) ---------- */
+@media print {
+    body {
+        background: white;
+        color: black;
+        padding: 0;
+    }
+    
+    .card, form, table {
+        background: white;
+        border: 1px solid #ccc;
+        box-shadow: none;
+    }
+    
+    a::after {
+        display: none;
+    }
+    
+    input[type="submit"], button {
+        display: none;
+    }
+}
+
+/* ---------- SCROLLBAR CUSTOMIZATION (Modern touch) ---------- */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-pink);
+}
+
+/* ---------- FOCUS VISIBLE (Accessibility) ---------- */
+:focus-visible {
+    outline: 2px solid var(--accent-cyan);
+    outline-offset: 3px;
+    border-radius: 8px;
+}
+
+/* ---------- LOADING ANIMATION FOR FORMS (Interactive touch) ---------- */
+form:has(input[type="submit"]:active) {
+    opacity: 0.9;
+    transition: opacity 0.1s;
+}
+
+/* ---------- SUCCESS/ERROR STYLES (for future use) ---------- */
+.success-message {
+    background: rgba(16, 185, 129, 0.2);
+    border-left: 4px solid var(--accent-green);
+    padding: 1rem;
+    border-radius: 12px;
+    margin: 1rem 0;
+}
+
+.error-message {
+    background: rgba(239, 68, 68, 0.2);
+    border-left: 4px solid var(--accent-red);
+    padding: 1rem;
+    border-radius: 12px;
+    margin: 1rem 0;
+}
+
+/* ============================================
+   3D CARD STYLES FOR STUDENT PROFILE
+   ============================================ */
+
+/* 3D Card Container */
+.card-3d-container {
+    perspective: 1500px;
+    margin: 2rem auto;
+    max-width: 500px;
+    cursor: pointer;
+}
+
+.card-3d {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    text-align: center;
+    transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d;
+    border-radius: 28px;
+}
+
+.card-3d-container:hover .card-3d {
+    transform: rotateY(180deg);
+}
+
+/* Front and Back faces */
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 28px;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(18, 25, 45, 0.95), rgba(6, 182, 212, 0.1));
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-front {
+    transform: rotateY(0deg);
+    background: linear-gradient(135deg, #1e1b4b, #0a0e1a);
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    background: linear-gradient(135deg, #0a0e1a, #1e1b4b);
+}
+
+/* Avatar / Icon */
+.student-avatar {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 8px 20px rgba(6, 182, 212, 0.3);
+}
+
+/* Student info items */
+.info-item {
+    margin: 1rem 0;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    border-left: 3px solid var(--accent-cyan);
+}
+
+.info-label {
+    font-weight: 700;
+    color: var(--accent-cyan);
+    display: inline-block;
+    width: 100px;
+    font-size: 0.9rem;
+}
+
+.info-value {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* Mark badge */
+.mark-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 40px;
+    font-weight: bold;
+    font-size: 1.3rem;
+    background: linear-gradient(135deg, #10b981, #059669);
+    margin-top: 1rem;
+}
+
+/* Flip instruction */
+.flip-hint {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .card-3d {
+        height: 500px;
+    }
+    
+    .info-label {
+        width: 80px;
+        font-size: 0.8rem;
+    }
+    
+    .info-value {
+        font-size: 0.9rem;
+    }
+}
+
+/* Loading Spinner */
+.spinner-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 14, 26, 0.9);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.3s ease;
+}
+
+.spinner {
+    text-align: center;
+}
+
+.spinner-ring {
+    width: 60px;
+    height: 60px;
+    border: 4px solid rgba(6, 182, 212, 0.2);
+    border-top: 4px solid #06b6d4;
+    border-right: 4px solid #8b5cf6;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.spinner-text {
+    color: #06b6d4;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.spinner-sub {
+    color: #9ca3af;
+    font-size: 0.7rem;
+    margin-top: 0.5rem;
+}
