@@ -20,6 +20,10 @@
         <servlet-name>GetStudentByNameNSurnameServlet</servlet-name>
         <servlet-class>za.ac.tut.web.GetStudentByNameNSurnameServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GetAllStudentServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.GetAllStudentServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddStudentServlet</servlet-name>
         <url-pattern>/AddStudentServlet.do</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>GetStudentByNameNSurnameServlet</servlet-name>
         <url-pattern>/GetStudentByNameNSurnameServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetAllStudentServlet</servlet-name>
+        <url-pattern>/GetAllStudentServlet.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

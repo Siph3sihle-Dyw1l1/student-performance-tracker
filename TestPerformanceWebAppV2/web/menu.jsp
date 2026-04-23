@@ -26,6 +26,8 @@
                 <li>Click <a href="get_test_statistics.jsp">here</a> to get test statistics.</li>
                 <li>Click <a href="get_student_using_id.jsp">here</a> to get a student using id as criteria.</li>
                 <li>Click <a href="get_student_using_name_surname.jsp">here</a> to get a specific student using name and surname.</li>
+                <li>Click <a href="GetAllStudentServlet.do">here</a> to remove a student.</li>
+                <li>Click <a href="GetAllStudentServlet.do">here</a> to edit a student.</li>
                 <li>Click <a href="get_student_using_age.jsp">here</a> to get a student using age as a criteria.</li>
             </ol>
         </main>
